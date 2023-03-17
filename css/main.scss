@@ -1,0 +1,505 @@
+// Используем препроцессор Scss
+// Сначала для телефона
+html {
+    font-size: 16px;
+}
+
+body {
+    margin: 1.5rem;
+    font-family: "Raleway", sans-serif;
+}
+
+a {
+    text-decoration: none;
+    font-size: 1.3rem;
+}
+
+.logo {
+    color: white;
+    font-weight: bold;
+}
+
+.hero-img {
+    background: url("../images/hero.jpg");
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    background-size: cover;
+    background-position-x: 20%;
+    background-position-y: 20%;
+    z-index: -1;
+    animation: introLoad 2s forwards;
+}
+
+nav {
+    position: fixed;
+    right: 0;
+    top: 0;
+    background: white;
+    height: 100vh;
+    width: 50%;
+    z-index: 999;
+    text-transform: uppercase;
+    transform: translateX(100%);
+    transition: transform 0.5s ease-in-out;
+
+    ul {
+        list-style-type: none;
+        padding: 0;
+        margin-top: 8rem;
+
+        a {
+            color: black;
+            display: block;
+            padding: 0.75rem 2rem;
+
+            &:hover {
+                background: rgb(235, 235, 235);
+            }
+        }
+    }
+
+    .close {
+        float: right;
+        margin: 2rem;
+        width: 2.5rem;
+
+        path {
+            fill: black;
+        }
+    }
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    .menu {
+        width: 2rem;
+        margin-top: 0.4rem;
+        cursor: pointer;
+
+        path {
+            fill: white;
+        }
+    }
+}
+
+section.hero {
+    color: white;
+    height: 90vh;
+    animation: moveDown 1s ease-in-out forwards;
+    font-family: Kurale;
+
+    h1 {
+        font-size: 3rem;
+        margin-top: 8rem;
+        line-height: 3.3rem;
+    }
+
+    .subhead {
+        font-size: 1.4rem;
+    }
+
+    .down-arrow {
+        // stroke: white;
+        position: absolute;
+        bottom: 8rem;
+        width: 3rem;
+        animation: moveArrow 1.5s alternate-reverse infinite;
+
+        polygon {
+            fill: white;
+        }
+    }
+}
+
+//Открыть навигацию
+
+.open-nav {
+    transform: translateX(0%);
+}
+
+.more-info {
+
+    img {
+        width: 100%;
+        object-fit: cover;
+        height: 11rem;
+        clip-path: polygon(10% 0, 100% 0%, 90% 100%, 0% 100%);
+
+    }
+
+    .title {
+        font-size: bold;
+        font-size: 1.25rem;
+    }
+
+    .desc {
+        line-height: 1.5rem;
+    }
+}
+
+@keyframes moveDown {
+    from {
+        transform: translateY(-100px);
+        opacity: 0;
+    }
+
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+@keyframes introLoad {
+    from {
+        clip-path: polygon(0 0, 100% 0, 100% 0, 0 0);
+    }
+
+    to {
+        clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+    }
+}
+
+@keyframes moveArrow {
+    from {
+        transform: translateY(-60px);
+    }
+
+    to {
+        transform: translateY(0);
+    }
+}
+
+// Responsive
+
+@media only screen and (min-width: 680px) {
+    body {
+        margin: 1.5rem 5rem;
+    }
+}
+
+@media only screen and (min-width: 920px) {
+
+    .menu {
+        display: none;
+    }
+
+    nav {
+        transform: translateX(0);
+        position: unset;
+        display: block;
+        width: auto;
+        height: auto;
+        background: none;
+
+        svg.close {
+            display: none;
+        }
+
+        ul {
+            display: flex;
+            margin: 0;
+
+            a {
+                color: white;
+                padding: 0.5rem 1.5rem;
+                font-size: 1rem;
+                text-shadow: 2px 2px 2px black;
+
+                &hover {
+                    background: none;
+                    text-decoration: underline;
+                }
+            }
+        }
+    }
+
+    .hero-img {
+        left: unset;
+        right: 0;
+        width: 50%;
+        height: 42rem;
+    }
+
+    .logo {
+        font-size: 1.6rem;
+        color: black;
+
+        span {
+            color: red;
+        }
+    }
+
+    section.hero {
+        // border: 2px solid red;
+        color: black;
+        height: 450px;
+        width: 40%;
+        margin-bottom: 8rem;
+
+        .subhead {
+            margin-bottom: 3rem;
+        }
+
+        svg.down-arrow {
+            stroke: black;
+            position: unset;
+            margin-top: 8rem;
+
+            polygon {
+                fill: black;
+            }
+        }
+    }
+
+    .feature {
+        display: grid;
+        grid-template-columns: repeat(2, auto);
+        gap: 3rem;
+        margin-top: 8rem;
+        // border: 2px solid blue;
+
+        img {
+            width: 23rem;
+        }
+
+        .content {
+            text-align: right;
+            width: 23rem;
+        }
+    }
+
+    .feature.left {
+        grid-template-areas: "left right";
+
+        img {
+            grid-area: left;
+        }
+
+        .content {
+            text-align: left;
+            width: 25rem;
+            justify-self: left;
+        }
+    }
+}
+
+@media only screen and (min-width: 1200px) {
+    .wrapper {
+        max-width: 1200px;
+        margin: 0 auto;
+    }
+
+    .feature {
+        justify-content: space-evenly;
+        gap: 0;
+    }
+
+    //Стрелка вниз
+
+    section.hero svg.down-arrow {
+        margin-top: 250px;
+    }
+}
+
+section.shop {
+    max-width: 900px;
+    margin-top: 4rem;
+    margin-right: auto;
+    margin-left: auto;
+
+    h2 {
+        text-align: center;
+    }
+
+    .shop-items {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-around;
+    }
+
+    .shop-item {
+        margin: 30px;
+    }
+
+    .shop-item-title {
+        display: block;
+        width: 100%;
+        text-align: center;
+        font-weight: bold;
+        font-size: 1.5rem;
+        color: rgb(69, 69, 69);
+        margin-bottom: 15px;
+    }
+
+    .shop-item-image {
+        height: 250px;
+        width: 250px;
+        border-radius: 8px;
+        margin-bottom: 0.5rem;
+        box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.4);
+    }
+
+    .shop-item-details {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 5px 0;
+
+        .shop-item-price {
+            font-size: 18px;
+            color: rgb(47, 123, 47);
+            font-family: sans-serif;
+        }
+    }
+}
+
+section.cart {
+    max-width: 900px;
+    margin-left: auto;
+    margin-right: auto;
+
+    .cart-row {
+        display: flex;
+    }
+
+    .cart-header {
+        font-weight: bold;
+        font-size: 1.25rem;
+        color: rgb(51, 51, 51);
+    }
+
+    .cart-column {
+        display: flex;
+        align-items: center;
+        border-bottom: 1px solid rgb(86, 204, 242);
+        margin-right: 1.5rem;
+        padding-bottom: 10px;
+        margin-top: 10px;
+    }
+
+    .cart-column:last-child {
+        margin-right: 0;
+    }
+
+    .cart-row:last-child {
+        border-bottom: 1px solid rgb(79, 155, 180);
+    }
+
+    .cart-row:last-child .cart-column {
+        border: none;
+    }
+
+    .cart-item {
+        width: 45%;
+
+        .cart-item-title {
+            color: rgb(51, 51, 51);
+            margin-left: 0.5rem;
+            font-size: 1.5rem;
+        }
+
+        .cart-item-image {
+            width: 75px;
+            height: auto;
+            border-radius: 10px;
+        }
+    }
+
+    .cart-price {
+        width: 20%;
+        font-size: 1.2rem;
+        color: rgb(51, 51, 51);
+    }
+}
+
+.cart-quantity {
+    width: 35%;
+
+    .cart-quantity-input {
+        height: 34px;
+        width: 50px;
+        border-radius: 5px;
+        border: 1px solid rgb(86, 204, 242);
+        background-color: rgb(238, 238, 238);
+        color: rgb(51, 51, 51);
+        padding: 0;
+        text-align: center;
+        font-size: 1.2rem;
+        margin-right: 25px;
+    }
+}
+
+.cart-total {
+    text-align: end;
+    margin-top: 10px;
+    margin-right: 10px;
+
+    .cart-total-title {
+        font-weight: bold;
+        font-size: 1.4rem;
+        color: black;
+        margin-right: 20px;
+    }
+
+    .cart-total-price {
+        color: rgb(51, 51, 51);
+        font-size: 1.4rem;
+    }
+}
+
+.btn {
+    text-align: center;
+    vertical-align: middle;
+    padding: 0.5rem;
+    cursor: pointer;
+    font-size: 1rem;
+}
+
+.btn-primary {
+    color: white;
+    background-color: rgb(49, 186, 231);
+    border: none;
+    border-radius: 0.1rem;
+    letter-spacing: 0.01rem;
+}
+
+.btn-primary:hover {
+    background-color: rgb(45, 156, 219)
+}
+
+.btn-primary:active {
+    background-color: rgb(31, 105, 147);
+}
+
+.btn-danger {
+    color: white;
+    background-color: rgb(235, 87, 87);
+    border: none;
+    border-radius: 0.3rem;
+    font-weight: bold;
+}
+
+.btn-danger:hover {
+    background-color: rgb(204, 76, 76);
+}
+
+.btn-danger:active {
+    background-color: rgb(104, 25, 25);
+}
+
+.btn-purchase {
+    display: block;
+    margin: 40px auto 80px auto;
+    font-size: 1.75rem;
+    padding: 12px 40px; 
+}
+
+footer {
+    text-align: center;
+}

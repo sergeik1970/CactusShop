@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Raleway&family=Kurale&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/main.css">
+    <title>Твой кактус</title>
+</head>
+
+<body>
+
+    <div class="hero-img"></div>
+
+    <div class="wrapper">
+
+        <header>
+            <a href="#" class="logo">Твой<span>Кактус</span></a>
+
+            <nav>
+                <svg class="close" id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg"
+                    viewBox="0 0 64 64">
+                    <path
+                        d="M32,4A28,28,0,1,0,60,32,28,28,0,0,0,32,4ZM43.31,37.66a4,4,0,0,1-5.66,5.66L32,37.66l-5.66,5.66a4,4,0,0,1-5.66-5.66L26.34,32l-5.66-5.66a4,4,0,0,1,5.66-5.66L32,26.34l5.66-5.66a4,4,0,0,1,5.66,5.66L37.66,32Z" />
+                </svg>
+
+                <ul>
+                    <li><a href="#">Главная</a></li>
+                    <li><a href="#">О нас</a></li>
+                    <li><a href="#">Блог</a></li>
+                </ul>
+
+            </nav>
+
+            <svg class="menu" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20">
+                <path d="M0 3h20v2H0V3zm0 6h20v2H0V9zm0 6h20v2H0v-2z" />
+            </svg>
+
+        </header>
+
+        <section class="hero">
+            <h1>Зелёный друг для тебя и в подарок</h1>
+
+            <p class="subhead">Эксплюзивные кактусы со всего мира!</p>
+
+            <svg class="down-arrow" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20">
+                <polygon
+                    points="9 16.172 2.929 10.101 1.515 11.515 10 20 10.707 19.293 18.485 11.515 17.071 10.101 11 16.172 11 0 9 0" />
+            </svg>
+
+        </section>
+
+        <!-- More info -->
+        <section class="more-info">
+            <div class="feature">
+                <div class="content">
+                    <p class="title">Разнообразие</p>
+                    <p class="desc">Отличный выбор кактусов и суккулентов на любой вкус</p>
+                </div>
+                <img src="images/demo-1.jpg" alt="">
+            </div>
+
+            <div class="feature left">
+                <div class="content">
+                    <p class="title">Удобная доставка</p>
+                    <p class="desc">Доставка транспортной компанией в любую точку мира</p>
+                </div>
+                <img src="images/demo-2.jpg" alt="">
+            </div>
+
+            <div class="feature">
+                <div class="content">
+                    <p class="title">Качество</p>
+                    <p class="desc">Наши растения только хорошего качества</p>
+                </div>
+                <img src="images/demo-3.jpg" alt="">
+            </div>
+
+        </section>
+
+        <section class="shop">
+
+            <h2>Наши кактусы</h2>
+
+            <div class="shop-items">
+
+                <div class="shop-item">
+                    <span class="shop-item-title">Кактус 1</span>
+                    <img class="shop-item-image" src="images/cactus-1.jpg">
+                    <div class="shop-item-details">
+                        <span class="shop-item-price">299 руб.</span>
+                        <button class="btn btn-primary shop-item-button" type="button">Добавить в корзину</button>
+                    </div>
+                </div>
+
+                <div class="shop-item">
+                    <span class="shop-item-title">Кактус 2</span>
+                    <img class="shop-item-image" src="images/cactus-2.jpg">
+                    <div class="shop-item-details">
+                        <span class="shop-item-price">199 руб.</span>
+                        <button class="btn btn-primary shop-item-button" type="button">Добавить в корзину</button>
+                    </div>
+                </div>
+
+                <div class="shop-item">
+                    <span class="shop-item-title">Кактус 3</span>
+                    <img class="shop-item-image" src="images/cactus-3.jpg">
+                    <div class="shop-item-details">
+                        <span class="shop-item-price">249 руб.</span>
+                        <button class="btn btn-primary shop-item-button" type="button">Добавить в корзину</button>
+                    </div>
+                </div>
+
+                <div class="shop-item">
+                    <span class="shop-item-title">Кактус 4</span>
+                    <img class="shop-item-image" src="images/cactus-4.jpg">
+                    <div class="shop-item-details">
+                        <span class="shop-item-price">599 руб.</span>
+                        <button class="btn btn-primary shop-item-button" type="button">Добавить в корзину</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="cart">
+            <h2>Корзина</h2>
+
+            <div class="cart-row">
+                <span class="cart-item cart-header cart-column">Товар</span>
+                <span class="cart-price cart-header cart-column">Цена</span>
+                <span class="cart-quantity cart-header cart-column">Количество</span>
+            </div>
+
+            <div class="cart-items">
+
+                <!-- <div class="cart-row">
+
+                    <div class="cart-item cart-column">
+                        <img class="cart-item-image" src="images/cactus-1.jpg" width="100" height="100">
+                        <span class="cart-item-title">Кактус 1</span>
+                    </div>
+                    <span class="cart-price cart-column">299 руб.</span>
+
+                    <div class="cart-quantity cart-column">
+                        <input class="cart-quantity-input" type="number" min="1" value="1">
+                        <button class="btn btn-danger" type="button">Удалить</button>
+                    </div>
+
+                </div> -->
+            </div>
+            <div class="cart-total">
+                <strong class="cart-total-title">Итого</strong>
+                <span class="cart-total-price">0 руб.</span>
+            </div>
+            <button class="btn btn-primary btn-purchase">Купить</button>
+        </section>
+
+        <footer>
+            &copy; Сергей Кудашев, 2023
+        </footer>
+
+    </div>
+
+    <script src="script.js"></script>
+
+</body>
+
+</html>
