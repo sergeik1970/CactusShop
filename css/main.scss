@@ -396,6 +396,7 @@ section.cart {
     }
 
     .cart-item {
+        flex-wrap: wrap-reverse;
         width: 45%;
 
         .cart-item-title {
@@ -419,6 +420,7 @@ section.cart {
 }
 
 .cart-quantity {
+    flex-wrap: wrap;
     width: 35%;
 
     .cart-quantity-input {

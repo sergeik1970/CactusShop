@@ -329,6 +329,7 @@ section.cart .cart-row:last-child .cart-column {
   border: none;
 }
 section.cart .cart-item {
+  flex-wrap: wrap-reverse;
   width: 45%;
 }
 section.cart .cart-item .cart-item-title {
@@ -348,6 +349,7 @@ section.cart .cart-price {
 }
 
 .cart-quantity {
+  flex-wrap: wrap;
   width: 35%;
 }
 .cart-quantity .cart-quantity-input {
